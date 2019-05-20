@@ -13,3 +13,7 @@ func (uc *helloUsecase) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.
 	log.Printf("Received: %v", in.Name)
 	return &pb.HelloResponse{Message: "Hello " + in.Name}, nil
 }
+
+func NewHelloUsecase() *helloUsecase {
+	return &helloUsecase{}
+}
