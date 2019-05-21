@@ -1,4 +1,6 @@
 ```bash
+$ pwd
+$GOPATH/src/github.com/pepese/golang-grpc-sample
 $ GO111MODULE=on go mod init
 $ mkdir proto
 $ mkdir proto/dest
