@@ -8,6 +8,7 @@ import (
 
 	pb "github.com/pepese/golang-grpc-sample/proto/dest/helloworld"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/metadata"
 )
 
 func main() {
@@ -20,6 +21,7 @@ func main() {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
 
+	ctx = metadata.AppendToOutgoingContext(ctx, "HOGE", "hoge")
 	client := pb.NewHelloServiceClient(conn)
 	message := &pb.HelloRequest{Name: "hoge"}
 	res, err := client.SayHello(ctx, message)
