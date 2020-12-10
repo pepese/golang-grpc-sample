@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+option go_package = "./helloworld/v1";
+
 package helloworld.v1;
 
 service HelloService {
